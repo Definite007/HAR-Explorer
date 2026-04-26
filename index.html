@@ -66,19 +66,90 @@
       <main id="main" class="main hidden">
         <div class="split">
           <div class="panel list-panel">
-            <div class="table-wrap">
-              <table class="req-table">
+            <div class="table-wrap" id="req-table-wrap">
+              <table class="req-table" id="req-table">
+                <colgroup id="req-colgroup">
+                  <col class="col-check" />
+                  <col class="col-idx" />
+                  <col class="col-method" />
+                  <col class="col-url" />
+                  <col class="col-status" />
+                  <col class="col-type" />
+                  <col class="col-size" />
+                  <col class="col-time" />
+                </colgroup>
                 <thead>
                   <tr>
-                    <th class="col-check" scope="col" title="Select visible rows">
+                    <th class="col-check th-resizable" scope="col" title="Select visible rows">
                       <input type="checkbox" id="select-all-visible" aria-label="Select all visible requests" />
+                      <span
+                        class="col-resize-handle"
+                        data-boundary="0"
+                        role="separator"
+                        aria-orientation="vertical"
+                        aria-label="Resize columns after checkbox"
+                      ></span>
                     </th>
-                    <th class="col-idx">#</th>
-                    <th class="col-method">Method</th>
-                    <th class="col-url">URL</th>
-                    <th class="col-status">Status</th>
-                    <th class="col-type">Type</th>
-                    <th class="col-size">Size</th>
+                    <th class="col-idx th-resizable">
+                      <span class="th-label">#</span>
+                      <span
+                        class="col-resize-handle"
+                        data-boundary="1"
+                        role="separator"
+                        aria-orientation="vertical"
+                        aria-label="Resize columns after index"
+                      ></span>
+                    </th>
+                    <th class="col-method th-resizable">
+                      <span class="th-label">Method</span>
+                      <span
+                        class="col-resize-handle"
+                        data-boundary="2"
+                        role="separator"
+                        aria-orientation="vertical"
+                        aria-label="Resize columns after method"
+                      ></span>
+                    </th>
+                    <th class="col-url th-resizable">
+                      <span class="th-label">URL</span>
+                      <span
+                        class="col-resize-handle"
+                        data-boundary="3"
+                        role="separator"
+                        aria-orientation="vertical"
+                        aria-label="Resize columns after URL"
+                      ></span>
+                    </th>
+                    <th class="col-status th-resizable">
+                      <span class="th-label">Status</span>
+                      <span
+                        class="col-resize-handle"
+                        data-boundary="4"
+                        role="separator"
+                        aria-orientation="vertical"
+                        aria-label="Resize columns after status"
+                      ></span>
+                    </th>
+                    <th class="col-type th-resizable">
+                      <span class="th-label">Type</span>
+                      <span
+                        class="col-resize-handle"
+                        data-boundary="5"
+                        role="separator"
+                        aria-orientation="vertical"
+                        aria-label="Resize columns after type"
+                      ></span>
+                    </th>
+                    <th class="col-size th-resizable">
+                      <span class="th-label">Size</span>
+                      <span
+                        class="col-resize-handle"
+                        data-boundary="6"
+                        role="separator"
+                        aria-orientation="vertical"
+                        aria-label="Resize columns after size"
+                      ></span>
+                    </th>
                     <th class="col-time">Time</th>
                   </tr>
                 </thead>

@@ -243,7 +243,9 @@ body {
 }
 
 .req-table {
+  table-layout: fixed;
   width: 100%;
+  min-width: 100%;
   border-collapse: collapse;
   font-size: 0.82rem;
 }
@@ -259,6 +261,50 @@ body {
   color: var(--text-muted);
   font-weight: 500;
   white-space: nowrap;
+}
+
+.req-table th.th-resizable {
+  padding-right: 10px;
+}
+
+.req-table th .th-label {
+  pointer-events: none;
+}
+
+.col-resize-handle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  margin-right: -3px;
+  height: 100%;
+  cursor: col-resize;
+  z-index: 3;
+  user-select: none;
+  touch-action: none;
+}
+
+.col-resize-handle::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  border-radius: 1px;
+  background: transparent;
+  transition: background 0.15s;
+}
+
+.col-resize-handle:hover::after,
+body.col-resizing .col-resize-handle::after {
+  background: var(--accent);
+}
+
+body.col-resizing {
+  cursor: col-resize !important;
+  user-select: none;
 }
 
 .req-table td {
@@ -281,8 +327,11 @@ body {
   outline-offset: -1px;
 }
 
+.req-table col.col-url {
+  min-width: 120px;
+}
+
 .col-check {
-  width: 2.25rem;
   text-align: center;
   padding-left: 0.35rem;
   padding-right: 0.35rem;
@@ -301,31 +350,16 @@ body {
 }
 
 .col-idx {
-  width: 2.5rem;
   text-align: right;
-}
-
-.col-method {
-  width: 4.5rem;
-}
-
-.col-status {
-  width: 3.5rem;
-}
-
-.col-type {
-  max-width: 7rem;
 }
 
 .col-size,
 .col-time {
-  width: 4.5rem;
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
 .col-url {
-  max-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
